@@ -1,6 +1,12 @@
 import App from "../src/App.js";
 import { MissionUtils } from "@woowacourse/mission-utils";
 
+/*
+jest.fn: 모의 함수 생성 
+jest.spyOn: 특정 객체의 메서드를 감시하는 스파이 생성
+mockImplementation: 모의 함수에 새로운 구현 설정
+mockReturnValueOnce: 모의 함수가 호출될 때마다 특정 값을 반환하도록 설정
+ */
 const mockQuestions = (inputs) => {
   MissionUtils.Console.readLineAsync = jest.fn(); // 모의 함수 생성(실제 구현을 지운다.)
 

@@ -17,7 +17,7 @@ export const carNameInput = async () => {
       throw new Error(FIVE_LENGTH_OVER_MESSAGE);
     }
 
-    return userInput;
+    return carNames;
   } catch (error) {
     throw new Error(error.message);
   }

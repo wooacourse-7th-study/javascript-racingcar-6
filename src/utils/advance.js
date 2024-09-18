@@ -1,16 +1,12 @@
 import { MissionUtils } from "@woowacourse/mission-utils";
+import { MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER } from "../constants/index.js";
 
 export const advanceCars = (carsInfo) => {
-  const entires = Object.entries(carsInfo);
-  const result = entires.map(([key, value]) => {
-    const randomNumber = MissionUtils.Random.pickNumberInRange(1, 9);
-
+  const keys = Object.keys(carsInfo);
+  keys.forEach((key) => {
+    const randomNumber = MissionUtils.Random.pickNumberInRange(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
     if (randomNumber >= 4) {
-      return [key, value + 1];
+      carsInfo[key] += 1;
     }
-
-    return [key, value];
   });
-
-  return result;
 };

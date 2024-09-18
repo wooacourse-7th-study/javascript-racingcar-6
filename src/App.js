@@ -14,8 +14,8 @@ class App {
 
       MissionUtils.Console.print(EXECUTION_MESSAGE);
       for (let i = 0; i < racingCount; i++) {
-        const carsInfoArray = advanceCars(carsInfo);
-        resultPrint(carsInfoArray);
+        advanceCars(carsInfo);
+        resultPrint(carsInfo);
       }
     } catch (error) {
       MissionUtils.Console.print(error.message);

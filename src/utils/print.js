@@ -1,11 +1,12 @@
 import { MissionUtils } from "@woowacourse/mission-utils";
 
-export const resultPrint = (carsInfoArray) => {
-  const result = carsInfoArray.map(([key, value], idx) => {
+export const resultPrint = (carsInfo) => {
+  const entries = Object.entries(carsInfo);
+  const result = entries.map(([key, value], idx) => {
     const [_, name] = key.split("-");
     const dash = "-".repeat(value);
 
-    if (idx === carsInfoArray.length - 1) {
+    if (idx === entries.length - 1) {
       return `${name} : ${dash}\n`;
     }
 

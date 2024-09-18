@@ -1,10 +1,11 @@
 import { MissionUtils } from "@woowacourse/mission-utils";
-import { carNameInput } from "./utils/index.js";
+import { carNameInput, racingCountInput } from "./utils/index.js";
 
 class App {
   async play() {
     try {
-      await carNameInput();
+      const carNames = await carNameInput();
+      const racingCount = await racingCountInput();
     } catch (error) {
       MissionUtils.Console.print(error.message);
       throw error;

@@ -1,5 +1,11 @@
 import { MissionUtils } from "@woowacourse/mission-utils";
-import { START_MESSAGE, MAX_NAME_LENGTH, FIVE_LENGTH_OVER_MESSAGE } from "../constants/index.js";
+import {
+  START_MESSAGE,
+  MAX_NAME_LENGTH,
+  FIVE_LENGTH_OVER_MESSAGE,
+  NUMBER_MESSAGE,
+  COUNT_MESSAGE,
+} from "../constants/index.js";
 
 export const carNameInput = async () => {
   try {
@@ -17,4 +23,16 @@ export const carNameInput = async () => {
   }
 };
 
-export const racingCountInput = async () => {};
+export const racingCountInput = async () => {
+  try {
+    const userInput = await MissionUtils.Console.readLineAsync(COUNT_MESSAGE);
+
+    if (isNaN(userInput)) {
+      throw new Error(NUMBER_MESSAGE);
+    }
+
+    return userInput;
+  } catch (error) {
+    throw new Error(error.message);
+  }
+};

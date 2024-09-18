@@ -1,4 +1,5 @@
 import { MissionUtils } from "@woowacourse/mission-utils";
+import { EXECUTION_MESSAGE } from "./constants/index.js";
 import { carNameInput, racingCountInput, advanceCars, resultPrint } from "./utils/index.js";
 
 class App {
@@ -11,6 +12,7 @@ class App {
         return acc;
       }, {});
 
+      MissionUtils.Console.print(EXECUTION_MESSAGE);
       for (let i = 0; i < racingCount; i++) {
         const carsInfoArray = advanceCars(carsInfo);
         resultPrint(carsInfoArray);

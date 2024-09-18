@@ -1,6 +1,6 @@
 import { MissionUtils } from "@woowacourse/mission-utils";
-import { EXECUTION_MESSAGE } from "./constants/index.js";
-import { carNameInput, racingCountInput, advanceCars, resultPrint } from "./utils/index.js";
+import { EXECUTION_MESSAGE, WINNER_MESSAGE } from "./constants/index.js";
+import { carNameInput, racingCountInput, advanceCars, resultPrint, getWinners } from "./utils/index.js";
 
 class App {
   async play() {
@@ -17,6 +17,9 @@ class App {
         advanceCars(carsInfo);
         resultPrint(carsInfo);
       }
+
+      const winners = getWinners(carsInfo);
+      MissionUtils.Console.print(WINNER_MESSAGE + winners);
     } catch (error) {
       MissionUtils.Console.print(error.message);
       throw error;

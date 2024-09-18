@@ -37,6 +37,8 @@ const getLogSpy = () => {
  toBeTruthy/toBeFalsy: true/false로 평가되는지 확인
  toContain: 배열이나 문자열에 특정 요소나 문자열이 포함되어 있는지 확인
  toThrow: 함수가 에러(예외)를 던지는지 확인
+ toHaveBeenCalledWith: 모의 함수가 특정 인자로 호출되었는지 확인
+ stringContaining: 문자열이 특정 부분 문자열을 포함하는지 확인
 */
 describe("자동차 경주 게임", () => {
   test("전진-정지", async () => {

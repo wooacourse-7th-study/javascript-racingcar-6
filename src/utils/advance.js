@@ -10,6 +10,7 @@ export const advanceCars = (getCarsInfo, advanceCar) => {
       GAME_RULE.MAX_RANDOM_NUMBER
     );
 
+    // 4이상 전진
     if (randomNumber >= GAME_RULE.ADVANCE_NUMBER) {
       advanceCar(carName);
     }

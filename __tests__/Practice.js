@@ -14,6 +14,13 @@ const getPrintLogSpy = () => {
   return logSpy;
 };
 
+const mockRandomNumbers = (numbers) => {
+  MissionUtils.Random.pickNumberInRange = jest.fn();
+  numbers.forEach((number) => {
+    MissionUtils.Random.pickNumberInRange.mockReturnValueOnce(number);
+  });
+};
+
 // 1. 사용자 입력 예외 처리
 describe("사용자 입력 예외 처리", () => {
   test("에러 메세지 [ERROR]로 시작하는지 체크", () => {});

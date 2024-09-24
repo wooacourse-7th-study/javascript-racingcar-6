@@ -13,6 +13,7 @@ export const carNameInput = async () => {
     const carNames = userInput.split(",");
     const isOverFiveLength = carNames.some((name) => name.length > MAX_NAME_LENGTH);
 
+    // 5글자 이상 체크
     if (isOverFiveLength) {
       throw new Error(FIVE_LENGTH_OVER_MESSAGE);
     }
@@ -27,7 +28,8 @@ export const racingCountInput = async () => {
   try {
     const userInput = await MissionUtils.Console.readLineAsync(COUNT_MESSAGE);
 
-    if (isNaN(userInput)) {
+    // 숫자와 공백 체크
+    if (isNaN(userInput) || userInput.includes(" ")) {
       throw new Error(NUMBER_MESSAGE);
     }
 

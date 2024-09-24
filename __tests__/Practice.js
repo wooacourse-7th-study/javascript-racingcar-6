@@ -7,6 +7,13 @@ const mockInputs = (inputs) => {
   });
 };
 
+const getPrintLogSpy = () => {
+  // 콘솔 객체의 print 메서드 감시하는 모의 함수 반환
+  const logSpy = jest.spyOn(MissionUtils.Console, "print");
+  logSpy.mockClear(); // 초기화(이전 테스트 결과가 다음 테스트에 영향 X)
+  return logSpy;
+};
+
 // 1. 사용자 입력 예외 처리
 describe("사용자 입력 예외 처리", () => {
   test("에러 메세지 [ERROR]로 시작하는지 체크", () => {});

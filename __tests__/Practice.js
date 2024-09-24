@@ -1,4 +1,11 @@
-// 그룹화
+import { MissionUtils } from "@woowacourse/mission-utils";
+
+const mockInputs = (inputs) => {
+  MissionUtils.Console.readLineAsync = jest.fn(() => {
+    const targetInput = inputs.shift();
+    return Promise.resolve(targetInput);
+  });
+};
 
 // 1. 사용자 입력 예외 처리
 describe("사용자 입력 예외 처리", () => {

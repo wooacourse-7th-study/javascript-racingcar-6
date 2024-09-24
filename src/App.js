@@ -1,5 +1,5 @@
 import { MissionUtils } from "@woowacourse/mission-utils";
-import { EXECUTION_MESSAGE, WINNER_MESSAGE } from "./constants/index.js";
+import { MESSAGE } from "./constants/index.js";
 import {
   carNameInput,
   racingCountInput,
@@ -16,14 +16,14 @@ class App {
       const racingCount = await racingCountInput();
       const { getCarsInfo, increment } = carsInfoController(carNames);
 
-      MissionUtils.Console.print(EXECUTION_MESSAGE);
+      MissionUtils.Console.print(MESSAGE.EXECUTION_RESULT);
       for (let i = 0; i < racingCount; i++) {
         advanceCars(getCarsInfo, increment);
         resultPrint(getCarsInfo);
       }
 
       const winners = getWinners(getCarsInfo);
-      MissionUtils.Console.print(WINNER_MESSAGE + winners);
+      MissionUtils.Console.print(MESSAGE.WINNER + winners);
     } catch (error) {
       MissionUtils.Console.print(error.message);
       throw error;

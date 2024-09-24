@@ -14,11 +14,11 @@ class App {
     try {
       const carNames = await carNameInput();
       const racingCount = await racingCountInput();
-      const { getCarsInfo, increment } = carsInfoController(carNames);
+      const { getCarsInfo, advanceCar } = carsInfoController(carNames);
 
       MissionUtils.Console.print(MESSAGE.EXECUTION_RESULT);
       for (let i = 0; i < racingCount; i++) {
-        advanceCars(getCarsInfo, increment);
+        advanceCars(getCarsInfo, advanceCar);
         resultPrint(getCarsInfo);
       }
 

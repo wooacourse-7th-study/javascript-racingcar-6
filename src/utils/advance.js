@@ -1,7 +1,7 @@
 import { MissionUtils } from "@woowacourse/mission-utils";
 import { GAME_RULE } from "../constants/index.js";
 
-export const advanceCars = (getCarsInfo, incrementFn) => {
+export const advanceCars = (getCarsInfo, advanceCar) => {
   const carNames = Object.keys(getCarsInfo());
 
   carNames.forEach((carName) => {
@@ -11,7 +11,7 @@ export const advanceCars = (getCarsInfo, incrementFn) => {
     );
 
     if (randomNumber >= GAME_RULE.ADVANCE_NUMBER) {
-      incrementFn(carName);
+      advanceCar(carName);
     }
   });
 };

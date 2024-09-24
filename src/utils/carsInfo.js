@@ -6,9 +6,9 @@ export const carsInfoController = (carNames) => {
 
   const getCarsInfo = () => ({ ...carsInfo });
 
-  const advanceCar = (carName) => {
+  const incrementAdvanceCount = (carName) => {
     carsInfo[carName]++;
   };
 
-  return { getCarsInfo, advanceCar };
+  return { getCarsInfo, incrementAdvanceCount };
 };

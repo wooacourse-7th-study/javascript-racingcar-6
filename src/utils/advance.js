@@ -1,7 +1,7 @@
 import { MissionUtils } from "@woowacourse/mission-utils";
 import { GAME_RULE } from "../constants/index.js";
 
-export const advanceCars = (getCarsInfo, advanceCar) => {
+export const advanceCars = (getCarsInfo, incrementAdvanceCount) => {
   const carNames = Object.keys(getCarsInfo());
 
   carNames.forEach((carName) => {
@@ -12,7 +12,7 @@ export const advanceCars = (getCarsInfo, advanceCar) => {
 
     // 4이상 전진
     if (randomNumber >= GAME_RULE.ADVANCE_NUMBER) {
-      advanceCar(carName);
+      incrementAdvanceCount(carName);
     }
   });
 };

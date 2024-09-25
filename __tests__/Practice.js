@@ -1,4 +1,5 @@
 import { MissionUtils } from "@woowacourse/mission-utils";
+import App from "../src/App";
 
 const mockInputs = (inputs) => {
   MissionUtils.Console.readLineAsync = jest.fn(() => {
@@ -23,13 +24,59 @@ const mockRandomNumbers = (numbers) => {
 
 // 1. 사용자 입력 예외 처리
 describe("사용자 입력 예외 처리", () => {
-  test("에러 메세지 [ERROR]로 시작하는지 체크", () => {});
+  test("에러 메세지 [ERROR]로 시작하는지 체크", async () => {
+    // given(준비)
+    const inputs = ["aaaaaa,bb", "1"];
+    const numbers = [4, 3];
 
-  test("자동차 이름 쉼표 기준으로 5자 이하인지 체크", () => {});
+    mockInputs(inputs);
+    mockRandomNumbers(numbers);
 
-  test("시도 할 횟수 숫자인지 체크", () => {});
+    // when(실행)
+    const app = new App();
 
-  test("시도 할 횟수에 공백이 포함되어있는지 체크", () => {});
+    // then(검증)
+    await expect(app.play()).rejects.toThrow("[ERROR]");
+  });
+
+  test("자동차 이름 쉼표 기준으로 5자 이하인지 체크", async () => {
+    // given(준비)
+    const inputs = ["aaaaaa,bb", "1"];
+
+    mockInputs(inputs);
+
+    // when(실행)
+    const app = new App();
+
+    // then(검증)
+    await expect(app.play()).rejects.toThrow("[ERROR]");
+  });
+
+  test("시도 할 횟수 숫자인지 체크", async () => {
+    // given(준비)
+    const inputs = ["aa,bb", "a"];
+
+    mockInputs(inputs);
+
+    // when(실행)
+    const app = new App();
+
+    // then(검증)
+    await expect(app.play()).rejects.toThrow("[ERROR]");
+  });
+
+  test("시도 할 횟수에 공백이 포함되어있는지 체크", async () => {
+    // given(준비)
+    const inputs = ["aa,bb", "1 "];
+
+    mockInputs(inputs);
+
+    // when(실행)
+    const app = new App();
+
+    // then(검증)
+    await expect(app.play()).rejects.toThrow("[ERROR]");
+  });
 });
 
 // 2. 게임 실행(전진)

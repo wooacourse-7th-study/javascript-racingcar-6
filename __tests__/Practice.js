@@ -81,9 +81,25 @@ describe("사용자 입력 예외 처리", () => {
 
 // 2. 게임 실행(전진)
 describe("전진 조건 체크", () => {
-  test("전진 조건에 맞게 전진", () => {});
+  test("전진 조건에 맞게 전진, 결과 출력", async () => {
+    // given(준비)
+    const inputs = ["a,b", "2"];
+    const outputs = ["\n실행 결과", "a : \nb : -\n", "a : -\nb : -\n", "최종 우승자 : a, b"];
+    const randoms = [3, 4, 9, 1];
+    const logSpy = getPrintLogSpy();
 
-  test("전진 조건에 맞게 출력", () => {});
+    mockInputs(inputs);
+    mockRandomNumbers([...randoms]);
+
+    // when
+    const app = new App();
+    await app.play();
+
+    // then
+    outputs.forEach((output) => {
+      expect(logSpy).toHaveBeenCalledWith(expect.stringContaining(output));
+    });
+  });
 });
 
 // 3. 우승자 출력(1명, 여러명)

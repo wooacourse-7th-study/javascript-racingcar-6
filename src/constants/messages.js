@@ -4,11 +4,14 @@ export const MESSAGES = {
   ANSWER_COUNT: "시도할 횟수는 몇 회인가요?",
   RESULT: "실행 결과",
   WINNER: "최종 우승자 : ",
+  PROGRESS_BAR: "-",
 };
 
 // 규칙
 export const RULES = {
   CAR_MAX_LENGTH: 5,
+  RANDOM_MIN_NUMBER: 0,
+  RANDOM_MAX_NUMBER: 9,
 };
 
 //유효성 검사 메시지

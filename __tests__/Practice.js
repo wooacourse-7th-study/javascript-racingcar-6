@@ -104,7 +104,23 @@ describe("전진 조건 체크", () => {
 
 // 3. 우승자 출력(1명, 여러명)
 describe("우승자 출력", () => {
-  test("우승자 1명 출력", () => {});
+  test("우승자 1명 출력", async () => {
+    // given(준비)
+    const inputs = ["a,b", "1"];
+    const outputs = ["\n실행 결과", "a : \nb : -\n", "최종 우승자 : b"];
+    const randoms = [3, 4];
+    const logSpy = getPrintLogSpy();
 
-  test("우승자 여러명 출력", () => {});
+    mockInputs(inputs);
+    mockRandomNumbers([...randoms]);
+
+    // when
+    const app = new App();
+    await app.play();
+
+    // then
+    outputs.forEach((output) => {
+      expect(logSpy).toHaveBeenCalledWith(expect.stringContaining(output));
+    });
+  });
 });

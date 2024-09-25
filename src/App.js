@@ -1,6 +1,8 @@
+import { MissionUtils } from "@woowacourse/mission-utils";
+import { MESSAGES } from "../src/constants/messages.js";
 class App {
   async play() {
-    console.log("start");
+    MissionUtils.Console.print(MESSAGES.START);
   }
 }
 

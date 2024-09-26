@@ -1,3 +1,4 @@
+import { RULES } from "../constants/messages.js";
 import { ERROR_MESSAGES } from "../constants/messages.js";
 
 const carInputValidation = (CARS_NAMES) => {
@@ -16,7 +17,7 @@ const carInputValidation = (CARS_NAMES) => {
     if (CAR.trim() === "") {
       throw new Error(ERROR_MESSAGES.CAR_ERROR_MESSAGES.NO_NAME);
     }
-    if (CAR.length > 5) {
+    if (CAR.length > RULES.CAR_MAX_LENGTH) {
       throw new Error(ERROR_MESSAGES.CAR_ERROR_MESSAGES.TOO_LONG);
     }
   });

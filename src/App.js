@@ -1,5 +1,8 @@
 class App {
-  async play() {}
+	async play() {}
 }
 
-export default App;
+const app = new App()
+app.play()
+
+export default App

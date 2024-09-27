@@ -9,6 +9,9 @@ class App {
     const players = isPlayerInputValid(playerInput);
     if (!players) throw new Error("[ERROR]");
     const playersMap = new Map(players.map((player) => [player, 0]));
+
+    const tryInput = await MissionUtils.Console.readLineAsync(MESSAGES.TRY_INPUT);
+    let TRY_LEN = Number(tryInput);
   }
 }
 

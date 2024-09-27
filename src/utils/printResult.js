@@ -1,7 +1,7 @@
 import { MissionUtils } from '@woowacourse/mission-utils'
 
-export const printResult = carCount => {
-	for (const car of carCount) {
+export const printResult = carsInfo => {
+	for (const car of carsInfo) {
 		MissionUtils.Console.print(`${car[0]} : ${'-'.repeat(car[1])}`)
 	}
 

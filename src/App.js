@@ -3,6 +3,7 @@ import { MESSAGE } from './constants/message.js'
 import {
 	inputCarsNameAndValidate,
 	inputTryCountAndValidate,
+	printResult,
 	racingResult,
 	winner,
 } from './utils/index.js'
@@ -12,6 +13,7 @@ class App {
 		//자동차 이름 입력
 		MissionUtils.Console.print(MESSAGE.START)
 		const carsNameSplit = await inputCarsNameAndValidate()
+		let carsInfo = new Map(carsNameSplit.map(carName => [carName, 0]))
 
 		//시도할 횟수 입력
 		MissionUtils.Console.print(MESSAGE.TRY_COUNT)
@@ -19,8 +21,12 @@ class App {
 
 		//레이싱 결과 출력
 		MissionUtils.Console.print(MESSAGE.RESULT)
-		const resultArr = racingResult(carsNameSplit, tryCount)
-		const printWinner = winner(resultArr)
+
+		for (let i = 0; i < tryCount; i++) {
+			racingResult(carsInfo)
+			printResult(carsInfo)
+		}
+		const printWinner = winner(carsInfo)
 		MissionUtils.Console.print(`${MESSAGE.END}${printWinner}`)
 	}
 }

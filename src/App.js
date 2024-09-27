@@ -13,6 +13,9 @@ class App {
     const tryInput = await MissionUtils.Console.readLineAsync(MESSAGES.TRY_INPUT);
     const tryNum = isTrialInputValid(tryInput);
     if (!tryNum) throw new Error("[ERROR]");
+
+    // 게임 진행
+    MissionUtils.Console.print(MESSAGES.RESULT);
   }
 }
 

@@ -22,6 +22,14 @@ class App {
       move(playersMap);
       printResult(playersMap);
     }
+
+    // 게임 끝
+    const maxLength = Math.max(...Array.from(playersMap.values()));
+    const winner = [];
+    playersMap.forEach((value, key) => {
+      if (value === maxLength) winner.push(key);
+    });
+    MissionUtils.Console.print(MESSAGES.WINNER + winner.join(", "));
   }
 }
 

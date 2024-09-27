@@ -9,12 +9,10 @@ class App {
     // 게임 시작
     const playerInput = await MissionUtils.Console.readLineAsync(MESSAGES.START_INPUT);
     const players = isPlayerInputValid(playerInput);
-    if (!players) throw new Error("[ERROR]");
     const playersMap = new Map(players.map((player) => [player, 0]));
 
     const tryInput = await MissionUtils.Console.readLineAsync(MESSAGES.TRY_INPUT);
     const tryNum = isTrialInputValid(tryInput);
-    if (!tryNum) throw new Error("[ERROR]");
 
     // 게임 진행
     MissionUtils.Console.print(MESSAGES.RESULT);

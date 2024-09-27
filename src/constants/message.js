@@ -5,3 +5,9 @@ export const MESSAGES = {
   RESULT: "실행 결과",
   WINNER: "최종 우승자 : ",
 };
+
+// 게임 내 에러 메시지
+export const ERROR_MESSAGES = {
+  LIMIT: "[ERROR] 자동차 이름은 5자 이하만 가능합니다.",
+  NOT_NUMBER: "[ERROR] 숫자만 입력 가능합니다.",
+};

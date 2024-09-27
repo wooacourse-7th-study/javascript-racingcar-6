@@ -1,6 +1,6 @@
 import { MissionUtils } from "@woowacourse/mission-utils";
 import { MESSAGES } from "./constants/message.js";
-import isPlayerInputValid from "./utils/validation.js";
+import { isPlayerInputValid, isTrialInputValid } from "./utils/validation.js";
 
 class App {
   async play() {
@@ -11,7 +11,8 @@ class App {
     const playersMap = new Map(players.map((player) => [player, 0]));
 
     const tryInput = await MissionUtils.Console.readLineAsync(MESSAGES.TRY_INPUT);
-    let TRY_LEN = Number(tryInput);
+    const tryNum = isTrialInputValid(tryInput);
+    if (!tryNum) throw new Error("[ERROR]");
   }
 }
 

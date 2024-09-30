@@ -30,6 +30,11 @@ export const racingTryCountInput = async () => {
       throw new Error(MESSAGE.ONLY_NUMBER);
     }
 
+    // 1 이상의 숫자 체크
+    if (userInput < 1) {
+      throw new Error(MESSAGE.NON_POSITIVE_NUMBER);
+    }
+
     return userInput;
   } catch (error) {
     throw new Error(error.message);

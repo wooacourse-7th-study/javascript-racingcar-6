@@ -2,7 +2,7 @@ import { RULES } from "../constants/messages.js";
 import { ERROR_MESSAGES } from "../constants/messages.js";
 
 const carInputValidation = (CARS_NAMES) => {
-  if (CARS_NAMES === "") {
+  if (CARS_NAMES.trim() === "") {
     throw new Error(ERROR_MESSAGES.CAR_ERROR_MESSAGES.BLANK);
   }
 

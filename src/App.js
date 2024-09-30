@@ -1,19 +1,19 @@
 import { MissionUtils } from "@woowacourse/mission-utils";
-import { MESSAGES } from "../src/constants/messages.js";
+import { MESSAGES } from "./constants/messages.js";
 import carInputValidation from "./utils/carInputValidation.js";
 import countInputValidation from "./utils/countInputValidation.js";
 import progress from "./utils/progress.js";
-import racePrint from "./utils/racePrint.js";
-import winner from "./utils/winner.js";
+import raceResultPrint from "./utils/raceResultPrint.js";
+import getWinners from "./utils/getWinners.js";
 class App {
   async play() {
-    MissionUtils.Console.print(MESSAGES.START);
-    const CARS_NAMES = await MissionUtils.Console.readLineAsync("");
+    const CARS_NAMES = await MissionUtils.Console.readLineAsync(MESSAGES.START);
     carInputValidation(CARS_NAMES);
 
-    MissionUtils.Console.print(MESSAGES.ANSWER_COUNT);
-    const COUNT = await MissionUtils.Console.readLineAsync("");
-    countInputValidation(COUNT);
+    const RACINGTRYCOUNT = await MissionUtils.Console.readLineAsync(
+      MESSAGES.ANSWER_COUNT
+    );
+    countInputValidation(RACINGTRYCOUNT);
 
     //게임 진행
     MissionUtils.Console.print("\n" + MESSAGES.RESULT);
@@ -25,16 +25,12 @@ class App {
     });
 
     //레이싱 결과 출력
-    for (let i = 0; i < COUNT; i++) {
-      Object.entries(RACE).forEach(([CAR, PROGRESS]) => {
-        if (progress()) {
-          RACE[CAR]++;
-        }
-      });
-
-      racePrint(RACE);
+    for (let i = 0; i < RACINGTRYCOUNT; i++) {
+      const raceEntries = Object.entries(RACE);
+      raceEntries.forEach(([CAR, _]) => progress() && RACE[CAR]++);
+      raceResultPrint(RACE);
     }
-    MissionUtils.Console.print(MESSAGES.WINNER + winner(RACE));
+    MissionUtils.Console.print(MESSAGES.WINNER + getWinners(RACE));
   }
 }
 

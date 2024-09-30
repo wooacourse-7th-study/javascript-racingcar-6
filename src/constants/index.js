@@ -1,6 +1,6 @@
 // message
 export const MESSAGE = Object.freeze({
-  FIVE_LENGTH_OVER: "[ERROR] 자동차 이름은 1 ~ 5자리만 입력 가능합니다.",
+  CAR_NAME_LENGTH: "[ERROR] 자동차 이름은 1 ~ 5자리만 입력 가능합니다.",
   ONLY_NUMBER: "[ERROR] 숫자만 입력 가능합니다.",
   NON_POSITIVE_NUMBER: "[ERROR] 1 이상의 숫자만 입력 가능합니다.",
   START: "경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)\n",

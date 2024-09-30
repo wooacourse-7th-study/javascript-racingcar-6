@@ -12,7 +12,7 @@ export const carNameInput = async () => {
     );
 
     if (isInvalidCarNameLength) {
-      throw new Error(MESSAGE.FIVE_LENGTH_OVER);
+      throw new Error(MESSAGE.CAR_NAME_LENGTH);
     }
 
     return carNames;

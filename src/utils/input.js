@@ -5,10 +5,13 @@ export const carNameInput = async () => {
   try {
     const userInput = await MissionUtils.Console.readLineAsync(MESSAGE.START);
     const carNames = userInput.split(",");
-    const isOverFiveLength = carNames.some((name) => name.length > GAME_RULE.MAX_NAME_LENGTH);
 
-    // 5글자 이상 체크
-    if (isOverFiveLength) {
+    // 자동차 이름 길이 체크 (1 ~ 5)
+    const isInvalidCarNameLength = carNames.some(
+      (name) => name.length > GAME_RULE.MAX_NAME_LENGTH || name.length === 0
+    );
+
+    if (isInvalidCarNameLength) {
       throw new Error(MESSAGE.FIVE_LENGTH_OVER);
     }
 

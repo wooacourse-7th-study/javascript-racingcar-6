@@ -12,6 +12,6 @@ export const MESSAGE = Object.freeze({
 export const GAME_RULE = Object.freeze({
   MAX_NAME_LENGTH: 5,
   ADVANCE_NUMBER: 4,
-  MIN_RANDOM_NUMBER: 1,
+  MIN_RANDOM_NUMBER: 0,
   MAX_RANDOM_NUMBER: 9,
 });

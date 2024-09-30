@@ -2,7 +2,7 @@ import { MissionUtils } from "@woowacourse/mission-utils";
 import { MESSAGE } from "./constants/index.js";
 import {
   carNameInput,
-  racingCountInput,
+  racingTryCountInput,
   advanceCars,
   resultPrint,
   getWinners,
@@ -13,7 +13,7 @@ class App {
   async play() {
     try {
       const carNames = await carNameInput();
-      const racingCount = await racingCountInput();
+      const racingCount = await racingTryCountInput();
       const { getCarsInfo, incrementAdvanceCount } = carsInfoController(carNames);
 
       MissionUtils.Console.print(MESSAGE.EXECUTION_RESULT);

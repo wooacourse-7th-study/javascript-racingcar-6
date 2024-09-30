@@ -18,7 +18,7 @@ export const carNameInput = async () => {
   }
 };
 
-export const racingCountInput = async () => {
+export const racingTryCountInput = async () => {
   try {
     const userInput = await MissionUtils.Console.readLineAsync(MESSAGE.COUNT);
 

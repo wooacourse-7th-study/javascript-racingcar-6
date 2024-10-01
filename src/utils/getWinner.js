@@ -1,14 +1,13 @@
 export const getWinner = carsInfo => {
 	let maxLength = 0
 	let winnerArr = []
-	for (const car of carsInfo) {
-		if (car[1] > maxLength) {
-			maxLength = car[1]
+
+	for (const [carName, carCount] of carsInfo) {
+		if (carCount > maxLength) {
+			maxLength = carCount
 		}
-	}
-	for (const car of carsInfo) {
-		if (car[1] == maxLength) {
-			winnerArr.push(car[0])
+		if (carCount == maxLength) {
+			winnerArr.push(carName)
 		}
 	}
 	return winnerArr.join(', ')

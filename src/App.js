@@ -1,7 +1,7 @@
 import { MissionUtils } from "@woowacourse/mission-utils";
 import { MESSAGES } from "./constants/message.js";
 import { isPlayerInputValid, isTrialInputValid } from "./utils/validation.js";
-import move from "./utils/move.js";
+import carsMove from "./utils/carsMove.js";
 import printResult from "./utils/printResult.js";
 
 class App {
@@ -17,7 +17,7 @@ class App {
     // 게임 진행
     MissionUtils.Console.print(MESSAGES.RESULT);
     for (let i = 0; i < tryNum; i++) {
-      move(playersMap);
+      carsMove(playersMap);
       printResult(playersMap);
     }
 

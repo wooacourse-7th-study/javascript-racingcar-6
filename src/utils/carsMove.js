@@ -5,7 +5,7 @@ import { MissionUtils } from "@woowacourse/mission-utils";
  * 전진한 차(key)의 value는 +1이 됩니다.
  * @param {Map} playersMap
  */
-export default function move(playersMap) {
+export default function carsMove(playersMap) {
   playersMap.forEach((val, key) => {
     const randomNum = MissionUtils.Random.pickNumberInRange(0, 9);
     if (randomNum < 4) return;

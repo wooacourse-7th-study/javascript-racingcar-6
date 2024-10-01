@@ -13,7 +13,7 @@ class App {
 		//자동차 이름 입력
 		MissionUtils.Console.print(MESSAGE.START)
 		const carsNameSplit = await inputCarsNameAndValidate()
-		let carsInfo = new Map(carsNameSplit.map(carName => [carName, 0]))
+		const carsInfo = new Map(carsNameSplit.map(carName => [carName, 0]))
 
 		//시도할 횟수 입력
 		MissionUtils.Console.print(MESSAGE.TRY_COUNT)

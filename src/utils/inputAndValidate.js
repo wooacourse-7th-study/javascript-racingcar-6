@@ -5,16 +5,12 @@ export const inputCarsNameAndValidate = async () => {
 
 	const carsSplit = userInputCarName.split(',')
 
-	// 입력이 빈값을 넣을때
-	carsSplit.map(car => {
-		if (car.trim().length === 0) {
+	// 입력이 빈값을 넣을때 && 자동차 이름 5글자 이상
+	carsSplit.forEach(el => {
+		if (el.length > 5) {
 			throw new Error('[ERROR]')
 		}
-	})
-
-	// 자동차 이름 5글자 이상
-	carsSplit.map(el => {
-		if (el.length > 5) {
+		if (car.trim().length === 0) {
 			throw new Error('[ERROR]')
 		}
 	})

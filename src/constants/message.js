@@ -8,6 +8,8 @@ export const MESSAGES = {
 
 // 게임 내 에러 메시지
 export const ERROR_MESSAGES = {
-  LIMIT: "[ERROR] 자동차 이름은 5자 이하만 가능합니다.",
+  CAR_LENGTH_LIMIT: "[ERROR] 자동차 이름은 5자 이하만 가능합니다.",
+  NO_BLANK: "[ERROR] 빈 값은 입력할 수 없습니다.",
   NOT_NUMBER: "[ERROR] 숫자만 입력 가능합니다.",
+  NO_UNDER_1: "[ERROR] 1 미만은 입력할 수 없습니다.",
 };

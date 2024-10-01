@@ -7,9 +7,8 @@ import { MissionUtils } from "@woowacourse/mission-utils";
  */
 export default function printResult(playersMap) {
   playersMap.forEach((count, player) => {
-    let length = "";
-    for (let i = 0; i < count; i++) length += "-";
-    MissionUtils.Console.print(`${player} : ${length}`);
+    const dash = "-".repeat(count);
+    MissionUtils.Console.print(`${player} : ${dash}`);
   });
   MissionUtils.Console.print("");
 }

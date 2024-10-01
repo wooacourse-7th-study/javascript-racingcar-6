@@ -13,7 +13,7 @@ export const inputCarsNameAndValidate = async () => {
 		if (el.length > 5) {
 			throw new Error(MESSAGE.ERROR.ISOVER_FIVE)
 		}
-		if (car.trim().length === 0) {
+		if (el.trim().length === 0) {
 			throw new Error(MESSAGE.ERROR.NONE_VALUE)
 		}
 	})

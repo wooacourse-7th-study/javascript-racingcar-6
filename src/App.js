@@ -24,8 +24,8 @@ class App {
     // 게임 끝
     const maxLength = Math.max(...Array.from(playersMap.values()));
     const winner = [];
-    playersMap.forEach((value, key) => {
-      if (value === maxLength) winner.push(key);
+    playersMap.forEach((count, player) => {
+      if (count === maxLength) winner.push(player);
     });
     MissionUtils.Console.print(MESSAGES.WINNER + winner.join(", "));
   }

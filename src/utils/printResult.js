@@ -6,10 +6,10 @@ import { MissionUtils } from "@woowacourse/mission-utils";
  * @param {Map} playersMap
  */
 export default function printResult(playersMap) {
-  playersMap.forEach((val, key) => {
+  playersMap.forEach((count, player) => {
     let length = "";
-    for (let i = 0; i < val; i++) length += "-";
-    MissionUtils.Console.print(`${key} : ${length}`);
+    for (let i = 0; i < count; i++) length += "-";
+    MissionUtils.Console.print(`${player} : ${length}`);
   });
   MissionUtils.Console.print("");
 }

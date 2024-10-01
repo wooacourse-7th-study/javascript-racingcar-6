@@ -5,7 +5,7 @@ import {
 	inputTryCountAndValidate,
 	printResult,
 	racingResult,
-	winner,
+	getWinner,
 } from './utils/index.js'
 
 class App {
@@ -26,7 +26,7 @@ class App {
 			racingResult(carsInfo)
 			printResult(carsInfo)
 		}
-		const printWinner = winner(carsInfo)
+		const printWinner = getWinner(carsInfo)
 		MissionUtils.Console.print(`${MESSAGE.END}${printWinner}`)
 	}
 }

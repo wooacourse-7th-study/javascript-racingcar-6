@@ -1,4 +1,4 @@
-export const winner = carsInfo => {
+export const getWinner = carsInfo => {
 	let maxLength = 0
 	let winnerArr = []
 	for (const car of carsInfo) {

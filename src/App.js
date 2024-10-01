@@ -11,12 +11,10 @@ import {
 class App {
 	async play() {
 		//자동차 이름 입력
-		MissionUtils.Console.print(MESSAGE.START)
 		const carsNameSplit = await inputCarsNameAndValidate()
 		const carsInfo = new Map(carsNameSplit.map(carName => [carName, 0]))
 
 		//시도할 횟수 입력
-		MissionUtils.Console.print(MESSAGE.TRY_COUNT)
 		const tryCount = await inputTryCountAndValidate()
 
 		//레이싱 결과 출력

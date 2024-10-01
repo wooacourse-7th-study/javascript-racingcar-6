@@ -1,7 +1,10 @@
 import { MissionUtils } from '@woowacourse/mission-utils'
+import { MESSAGE } from '../constants/message'
 
 export const inputCarsNameAndValidate = async () => {
-	const userInputCarName = await MissionUtils.Console.readLineAsync('')
+	const userInputCarName = await MissionUtils.Console.readLineAsync(
+		MESSAGE.START,
+	)
 
 	const carsSplit = userInputCarName.split(',')
 
@@ -25,7 +28,9 @@ export const inputCarsNameAndValidate = async () => {
 }
 
 export const inputTryCountAndValidate = async () => {
-	const userInputTryCount = await MissionUtils.Console.readLineAsync('')
+	const userInputTryCount = await MissionUtils.Console.readLineAsync(
+		MESSAGE.TRY_COUNT,
+	)
 	//빈값이 들어오는지
 	if (userInputTryCount.trim() === '') {
 		throw new Error('[ERROR]')
